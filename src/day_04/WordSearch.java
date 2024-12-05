@@ -27,6 +27,31 @@ public class WordSearch {
         return true;
     }
 
+    public int countXMASOccurrences() {
+        int count = 0;
+
+        for (int row = 1; row < letterGrid.getRows() - 1; row++) {
+            for (int col = 1; col < letterGrid.getColumns() - 1; col++) {
+                if (isXMASPattern(row, col)) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public boolean isXMASPattern(int row, int col) {
+        String diagonal1 = "" + letterGrid.getCharAt(row - 1, col - 1) + letterGrid.getCharAt(row, col) + letterGrid.getCharAt(row + 1, col + 1);
+        String diagonal2 = "" + letterGrid.getCharAt(row + 1, col - 1) + letterGrid.getCharAt(row, col) + letterGrid.getCharAt(row - 1, col + 1);
+
+        return (isMAS(diagonal1) && isMAS(diagonal2));
+    }
+
+    public boolean isMAS(String word) {
+        return word.equals("MAS") || word.equals("SAM");
+    }
+
     public int countOccurrences(String word) {
         int rows = letterGrid.getRows();
         int columns = letterGrid.getColumns();
