@@ -20,8 +20,4 @@ public class LetterGrid {
     public char getCharAt(int row, int column) {
         return lines.get(row).charAt(column);
     }
-
-    public ArrayList<String> getLines() {
-        return lines;
-    }
 }
