@@ -20,4 +20,9 @@ public class Map {
     public char getCharAt(int row, int col) {
         return lines.get(row).charAt(col);
     }
+
+    public boolean isOnMap(int row, int col) {
+        return row >= 0 || row < getWidth() ||
+                col >= 0 || col < getHeight();
+    }
 }
