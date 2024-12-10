@@ -4,7 +4,7 @@ import shared.DataSet;
 
 public class Day08 {
     public static void main(String[] args) {
-        DataSet file = new DataSet("src/day_08/test-08.txt");
+        DataSet file = new DataSet("src/day_08/input-08.txt");
 
         Part1(file);
     }
