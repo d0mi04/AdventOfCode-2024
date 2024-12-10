@@ -29,33 +29,18 @@ public class Scanner {
                 int rowDiff = filteredAntennas.get(i).getPosition()[0] - filteredAntennas.get(j).getPosition()[0];
                 int colDiff = filteredAntennas.get(i).getPosition()[1] - filteredAntennas.get(j).getPosition()[1];
 
-//                System.out.println("frequency: " + frequency + " form: [" + filteredAntennas.get(j).getPosition()[0] + ", " +filteredAntennas.get(j).getPosition()[1] + "] to: [" + filteredAntennas.get(i).getPosition()[0] + ", " + filteredAntennas.get(i).getPosition()[1] + "]");
-//                System.out.println(" distance: [" + rowDiff + ", " + colDiff + "]");
-
-                if(map.isOnMap(filteredAntennas.get(j).getPosition()[0] - rowDiff, filteredAntennas.get(j).getPosition()[1] - colDiff)) {
-//                    if(map.getCharAt(filteredAntennas.get(j).getPosition()[0] - rowDiff, filteredAntennas.get(j).getPosition()[1] - colDiff) == '.') {
+                if (map.isOnMap(filteredAntennas.get(j).getPosition()[0] - rowDiff, filteredAntennas.get(j).getPosition()[1] - colDiff)) {
+                    if (map.getCharAt(filteredAntennas.get(j).getPosition()[0] - rowDiff, filteredAntennas.get(j).getPosition()[1] - colDiff) == '.') {
                         count++;
-//                    }
-
-//                    System.out.print(filteredAntennas.get(j).getPosition()[0] - rowDiff);
-//                    System.out.print(", ");
-//                    System.out.print(filteredAntennas.get(j).getPosition()[1] - colDiff);
+                    }
                 }
-                System.out.println();
 
-                if(map.isOnMap(filteredAntennas.get(i).getPosition()[0] + rowDiff, filteredAntennas.get(i).getPosition()[1] + colDiff)) {
-//                    if(map.getCharAt(filteredAntennas.get(i).getPosition()[0] + rowDiff, filteredAntennas.get(i).getPosition()[1] + colDiff) == '.') {
+                if (map.isOnMap(filteredAntennas.get(i).getPosition()[0] + rowDiff, filteredAntennas.get(i).getPosition()[1] + colDiff)) {
+                    if (map.getCharAt(filteredAntennas.get(i).getPosition()[0] + rowDiff, filteredAntennas.get(i).getPosition()[1] + colDiff) == '.') {
                         count++;
-//                    }
-
-//                    System.out.print(filteredAntennas.get(i).getPosition()[0] - rowDiff);
-//                    System.out.print(", ");
-//                    System.out.print(filteredAntennas.get(i).getPosition()[1] - colDiff);
+                    }
                 }
-                System.out.println();
 
-//                if(filteredAntennas.get(j).getPosition()[0] - rowDiff < 0 || filteredAntennas.get(j).getPosition()[0] - rowDiff > map.getWidth()
-//                    || filteredAntennas.get(j).getPosition()[1] - colDiff < 0 || filteredAntennas.get(j).getPosition()[1] - colDiff > map.getHeight())
             }
         }
 //        System.out.println("Antinodes: " + count);

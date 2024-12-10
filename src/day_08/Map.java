@@ -22,7 +22,7 @@ public class Map {
     }
 
     public boolean isOnMap(int row, int col) {
-        return row >= 0 || row < getWidth() ||
-                col >= 0 || col < getHeight();
+        return row >= 0 && row < getWidth() &&
+                col >= 0 && col < getHeight();
     }
 }
