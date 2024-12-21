@@ -26,7 +26,6 @@ public class Region {
         return CalculateArea() * CalculatePerimeter();
     }
 
-
     public int CalculatePerimeter() {
         Set<Plant> region = new HashSet<>(plants);
         int perimeter = 0;
