@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataSet {
-    ArrayList<String> lines;
+    private final ArrayList<String> lines;
 
     public DataSet(String filename) {
         this.lines = ReadLines(filename);
