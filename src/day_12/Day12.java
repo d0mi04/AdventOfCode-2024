@@ -10,13 +10,13 @@ public class Day12 {
     }
 
     public static void Part1(DataSet file) {
-        GardenMap map = new GardenMap(file.getLines());
-        map.CreatePlants();
+        Garden garden = new Garden(file.getLines());
+        garden.CreatePlants();
 
-        map.FindRegions();
+        garden.FindRegions();
 
         int TotalPrice = 0;
-        for(Region r : map.regions) {
+        for(Region r : garden.regions) {
             int price = r.CalculatePrice();
             TotalPrice+=price;
         }

@@ -3,12 +3,10 @@ package day_12;
 import java.util.Objects;
 
 public class Plant {
-    char plant;
     int x;
     int y;
 
-    public Plant(char plant, int x, int y) {
-        this.plant = plant;
+    public Plant(int x, int y) {
         this.x = x;
         this.y = y;
     }

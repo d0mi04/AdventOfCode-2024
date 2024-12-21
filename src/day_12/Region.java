@@ -37,7 +37,7 @@ public class Region {
                 int neighbourX = p.getX() + dir[0];
                 int neighbourY = p.getY() + dir[1];
 
-                if(region.contains(new Plant(' ', neighbourX, neighbourY))) {
+                if(region.contains(new Plant(neighbourX, neighbourY))) {
                     plantPerimeter--;
                 }
             }
