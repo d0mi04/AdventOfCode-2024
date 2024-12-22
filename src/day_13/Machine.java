@@ -3,9 +3,9 @@ package day_13;
 import java.util.ArrayList;
 
 public class Machine {
-    private final int[] A;
-    private final int[] B;
-    private final int[] prize;
+    private final long[] A;
+    private final long[] B;
+    private final long[] prize;
 
     public Machine(ArrayList<String> section) {
         this.A = SetButton(section.get(0));
@@ -13,19 +13,26 @@ public class Machine {
         this.prize = SetPrize(section.get(2));
     }
 
-    public int FindSolution() {
-        int count = 0;
-        int detA = getA()[0] * getB()[1] - getA()[1] * getB()[0];
+    public void CorrectPrize() {
+        long additionalDigits = 10000000000L;
+
+        this.prize[0] += additionalDigits * 1000L;
+        this.prize[1] += additionalDigits * 1000L;
+    }
+
+    public long FindSolution() {
+        long count = 0;
+        long detA = getA()[0] * getB()[1] - getA()[1] * getB()[0];
         if(detA == 0) {
 //            System.out.println("detA = 0");
             return 0;
         }
 
-        int detAa = getPrize()[0] * getB()[1] - getB()[0] * getPrize()[1];
-        int detAb = getA()[0] * getPrize()[1] - getA()[1] * getPrize()[0];
+        long detAa = getPrize()[0] * getB()[1] - getB()[0] * getPrize()[1];
+        long detAb = getA()[0] * getPrize()[1] - getA()[1] * getPrize()[0];
 
-        int a = detAa / detA;
-        int b = detAb / detA;
+        long a = detAa / detA;
+        long b = detAb / detA;
 
         if(detAa % detA == 0 && detAb % detA == 0) {
 //            System.out.println("Solution: " + a + ", " + b);
@@ -37,43 +44,43 @@ public class Machine {
     }
 
     public boolean isSolution() {
-        int gX = GCD(getA()[0], getB()[0]);
-        int gY = GCD(getA()[1], getB()[1]);
+        long gX = GCD(getA()[0], getB()[0]);
+        long gY = GCD(getA()[1], getB()[1]);
         return getPrize()[0] % gX == 0 && getPrize()[1] % gY == 0;
     }
 
-    public int GCD(int a, int b) {
+    public long GCD(long a, long b) {
         while(b != 0) {
-            int r = a % b;
+            long r = a % b;
             a = b;
             b = r;
         }
         return a; // GCD
     }
 
-    public int[] SetButton(String line) {
+    public long[] SetButton(String line) {
         String[] split = line.split("X\\+|, Y\\+");
-        int x = Integer.parseInt(split[1].trim());
-        int y = Integer.parseInt(split[2].trim());
-        return new int[]{x, y};
+        long x = Long.parseLong(split[1].trim());
+        long y = Long.parseLong(split[2].trim());
+        return new long[]{x, y};
     }
 
-    public int[] SetPrize(String line) {
+    public long[] SetPrize(String line) {
         String[] split = line.split("X=|, Y=");
-        int x = Integer.parseInt(split[1].trim());
-        int y = Integer.parseInt(split[2].trim());
-        return new int[]{x, y};
+        long x = Long.parseLong(split[1].trim());
+        long y = Long.parseLong(split[2].trim());
+        return new long[]{x, y};
     }
 
-    public int[] getA() {
+    public long[] getA() {
         return A;
     }
 
-    public int[] getB() {
+    public long[] getB() {
         return B;
     }
 
-    public int[] getPrize() {
+    public long[] getPrize() {
         return prize;
     }
 }
