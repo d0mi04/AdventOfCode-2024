@@ -7,11 +7,16 @@ public class Day19 {
         DataSet file = new DataSet("src/day_19/input-19.txt");
 
         Part1(file);
+        Part2(file);
+    }
+
+    public static void Part2(DataSet file) {
+        Onsen onsen = new Onsen(file);
+        System.out.println(onsen.countTotalCombinations());
     }
 
     public static void Part1(DataSet file) {
         Onsen onsen = new Onsen(file);
-        System.out.println(onsen.getDesigns().size());
         System.out.println(onsen.countDesigns());
     }
 }
