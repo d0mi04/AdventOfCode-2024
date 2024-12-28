@@ -81,12 +81,4 @@ public class Onsen {
         }
         return dp[n];
     }
-
-    public ArrayList<String> getDesigns() {
-        return designs;
-    }
-
-    public HashSet<String> getTowels() {
-        return towels;
-    }
 }
